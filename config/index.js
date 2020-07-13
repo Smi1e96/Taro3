@@ -1,6 +1,9 @@
+
+const TerserPlugin = require("terser-webpack-plugin");
+
 const config = {
-  projectName: 'taro3',
-  date: '2020-7-2',
+  projectName: 'subiot',
+  date: '2020-7-1',
   designWidth: 750,
   deviceRatio: {
     640: 2.34 / 2,
@@ -14,17 +17,34 @@ const config = {
   },
   copy: {
     patterns: [
+      {
+        from: 'src/components/vant-weapp/wxs/',
+        to: 'dist/components/vant-weapp/wxs/'
+      }
     ],
     options: {
     }
   },
-  framework: 'react',
+  terser: {
+    enable: true,
+    config: {
+      // 配置项同 https://github.com/terser/terser#minify-options
+    }
+  },
+  csso: {
+    enable: true,
+    config: {
+      // 配置项同 https://github.com/css/csso#minifysource-options
+    }
+  },
   mini: {
     postcss: {
       pxtransform: {
         enable: true,
         config: {
-
+          selectorBlackList: [
+            /^.van-.*?$/,  // 这里是vant-weapp中className的匹配模式
+          ]
         }
       },
       url: {
@@ -34,12 +54,41 @@ const config = {
         }
       },
       cssModules: {
-        enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
+        enable: true, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
           namingPattern: 'module', // 转换模式，取值为 global/module
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
+    },
+
+    lessLoaderOption: {
+      strictMath: true,
+      noIeCompat: true,
+      modifyVars: {
+        // 或者可以通过 less 文件覆盖（文件路径为绝对路径）
+        'hack': `true; @import "~@/assets/theme.less";`
+      }
+    },
+    cssLoaderOption: {
+    },
+    webpackChain(chain) {
+      // chain.plugin('analyzer')
+      //   .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin, [])
+        
+      chain.mode("production");
+      chain.optimization.minimize(true);
+      chain.plugin("terser").use(TerserPlugin, [
+        {
+          cache: true,
+          extractComments: false,
+          terserOptions: {
+            output: {
+              comments: false
+            }
+          }
+        }
+      ]);
     }
   },
   h5: {
@@ -54,11 +103,14 @@ const config = {
       cssModules: {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
-          namingPattern: 'module', // 转换模式，取值为 global/module
+          namingPattern: 'global', // 转换模式，取值为 global/module
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
     }
+  },
+  alias: {
+    '@/assets': require('path').resolve(__dirname, '..', 'src/assets')
   }
 }
 
