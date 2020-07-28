@@ -1135,7 +1135,7 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.7.4", "@babel/runtime@^7.7.7", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.4", "@babel/runtime@^7.7.7", "@babel/runtime@^7.8.4":
   version "7.10.4"
   resolved "https://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.10.4.tgz?cache=0&sync_timestamp=1593521094781&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.10.4.tgz#a6724f1a6b8d2f6ea5236dbfe58c7d7ea9c5eb99"
   integrity sha1-pnJPGmuNL26lI22/5Yx9fqnF65k=
@@ -1348,14 +1348,6 @@
     react-reconciler "^0.23.0"
     scheduler "^0.17.0"
 
-"@tarojs/redux@^2.2.10":
-  version "2.2.10"
-  resolved "https://registry.npm.taobao.org/@tarojs/redux/download/@tarojs/redux-2.2.10.tgz#63b1ee7cd123c17aa67d71d6d5ae8ce6ef6eacea"
-  integrity sha1-Y7HufNEjwXqmfXHW1a6M5u9urOo=
-  dependencies:
-    "@tarojs/taro" "^2.2.10"
-    "@tarojs/utils" "^2.2.10"
-
 "@tarojs/router@3.0.2":
   version "3.0.2"
   resolved "https://registry.npm.taobao.org/@tarojs/router/download/@tarojs/router-3.0.2.tgz#5b58933b123a415e30630234336af5f88bce4621"
@@ -1417,18 +1409,6 @@
   dependencies:
     "@tarojs/api" "3.0.2"
     "@tarojs/taro-h5" "3.0.2"
-
-"@tarojs/taro@^2.2.10":
-  version "2.2.10"
-  resolved "https://registry.npm.taobao.org/@tarojs/taro/download/@tarojs/taro-2.2.10.tgz#e269aa410b72c02e0f3228258c01ab4d258c641f"
-  integrity sha1-4mmqQQtywC4PMigljAGrTSWMZB8=
-  dependencies:
-    "@tarojs/utils" "^2.2.10"
-
-"@tarojs/utils@^2.2.10":
-  version "2.2.10"
-  resolved "https://registry.npm.taobao.org/@tarojs/utils/download/@tarojs/utils-2.2.10.tgz#ddf82a77aeccfc315c2fb78b3d1c079860aed350"
-  integrity sha1-3fgqd67M/DFcL7eLPRwHmGCu01A=
 
 "@tarojs/webpack-runner@3.0.2":
   version "3.0.2"
@@ -5384,6 +5364,13 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
+hoist-non-react-statics@^3.3.0:
+  version "3.3.2"
+  resolved "https://registry.npm.taobao.org/hoist-non-react-statics/download/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
+  integrity sha1-7OCsr3HWLClpwuxZ/v9CpLGoW0U=
+  dependencies:
+    react-is "^16.7.0"
+
 hosted-git-info@^2.1.4:
   version "2.8.8"
   resolved "https://registry.npm.taobao.org/hosted-git-info/download/hosted-git-info-2.8.8.tgz#7539bd4bc1e0e0a895815a2e0262420b12858488"
@@ -7224,24 +7211,6 @@ neo-async@^2.5.0, neo-async@^2.6.1:
   resolved "https://registry.npm.taobao.org/neo-async/download/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha1-rCetpmFn+ohJpq3dg39rGJrSCBw=
 
-nerv-shared@1.4.0:
-  version "1.4.0"
-  resolved "https://registry.npm.taobao.org/nerv-shared/download/nerv-shared-1.4.0.tgz#4ae903f215888ab886b3d04ae3b95d5327e67f43"
-  integrity sha1-SukD8hWIiriGs9BK47ldUyfmf0M=
-
-nerv-utils@1.4.5:
-  version "1.4.5"
-  resolved "https://registry.npm.taobao.org/nerv-utils/download/nerv-utils-1.4.5.tgz#3e017a8a1b605b35ee31ad396a038207fbc597b0"
-  integrity sha1-PgF6ihtgWzXuMa05agOCB/vFl7A=
-
-nervjs@^1.5.7:
-  version "1.5.7"
-  resolved "https://registry.npm.taobao.org/nervjs/download/nervjs-1.5.7.tgz#29798a8e1473b33329b9d2af4022d8818c7ff4cd"
-  integrity sha1-KXmKjhRzszMpudKvQCLYgYx/9M0=
-  dependencies:
-    nerv-shared "1.4.0"
-    nerv-utils "1.4.5"
-
 next-tick@~1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/next-tick/download/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
@@ -8551,7 +8520,7 @@ react-dom@^16.10.0:
     prop-types "^15.6.2"
     scheduler "^0.19.1"
 
-react-is@^16.8.1:
+react-is@^16.7.0, react-is@^16.8.1, react-is@^16.9.0:
   version "16.13.1"
   resolved "https://registry.npm.taobao.org/react-is/download/react-is-16.13.1.tgz?cache=0&sync_timestamp=1592591133901&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-is%2Fdownload%2Freact-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha1-eJcppNw23imZ3BVt1sHZwYzqVqQ=
@@ -8565,6 +8534,17 @@ react-reconciler@^0.23.0:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     scheduler "^0.17.0"
+
+react-redux@^7.2.0:
+  version "7.2.0"
+  resolved "https://registry.npm.taobao.org/react-redux/download/react-redux-7.2.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-redux%2Fdownload%2Freact-redux-7.2.0.tgz#f970f62192b3981642fec46fd0db18a074fe879d"
+  integrity sha1-+XD2IZKzmBZC/sRv0NsYoHT+h50=
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    hoist-non-react-statics "^3.3.0"
+    loose-envify "^1.4.0"
+    prop-types "^15.7.2"
+    react-is "^16.9.0"
 
 react@^16.10.0:
   version "16.13.1"

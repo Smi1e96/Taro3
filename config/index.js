@@ -13,6 +13,7 @@ const config = {
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins: [],
+  framework: 'react',
   defineConstants: {
   },
   copy: {

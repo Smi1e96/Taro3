@@ -1,27 +1,26 @@
 import React from 'react'
 
-import { View, Text } from '@tarojs/components'
-
-// import { useRequest } from 'ahooks'
+import { View } from '@tarojs/components'
 
 import './index.less'
 
-// function getUsername(): Promise<any> {
-//   return new Promise((resolve) => {
-//     setTimeout(() => {
-//       resolve('测试');
-//     }, 3000);
-//   });
-// }
 
 const Index = () => {
-  // const { data, error, loading } = useRequest(getUsername);
 
-  // console.log(data, error, loading)
+  const hanldClick = () => {
+    console.log('1')
+  }
 
   return (
     <View className='index'>
-      <Text>Hello world!</Text>
+      <van-button
+        onClick={hanldClick}
+        block
+        plain
+        color='#656D7F'
+      >
+        密码/短信登录
+      </van-button>
     </View>
   )
 }

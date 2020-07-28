@@ -1,8 +1,9 @@
+
 // @ts-nocheck
 
-import { Component } from 'react'
+import React, { Component } from 'react'
 
-import { Provider } from '@tarojs/redux'
+import { Provider } from 'react-redux'
 
 import dva from './dva'
 import models from './models'
@@ -22,8 +23,6 @@ const store = dvaApp.getStore()
 class App extends Component {
 
   componentDidMount() {
-
-    console.log(store)
   }
 
   componentDidShow() { }
@@ -31,17 +30,13 @@ class App extends Component {
   componentDidHide() { }
 
   componentDidCatchError() { }
-
-  // this.props.children 是将要会渲染的页面
+  
   render() {
-    
     return (
       <Provider store={store}>
         {this.props.children}
       </Provider>
     )
-    // return this.props.children
-
   }
 }
 
