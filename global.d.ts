@@ -1,4 +1,3 @@
-
 declare module '*.png';
 declare module '*.gif';
 declare module '*.jpg';
@@ -27,5 +26,6 @@ declare namespace JSX {
     'van-tabbar': any;
     'van-tabbar-item': any;
     'van-checkbox': any;
+    'van-cell': any
   }
 }
